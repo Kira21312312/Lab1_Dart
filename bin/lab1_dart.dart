@@ -1,4 +1,22 @@
 
+String greet(String name) {
+  return "Привет, $name!";
+}
+
+int quare(int x) => x * x;
+
+void describePet({required String name, String species = "кот", int age = 0}) {
+  print("$name - $species, возраст $age");
+}
+
+String repeat(String text, [int times = 2]) {
+  String result = "";
+  for (int i = 0; i < times; i++) {
+    result += text;
+  }
+  return result;
+}
+
 void main() {
   String name = "Артем";
   int age = 20;
@@ -62,5 +80,29 @@ void main() {
     print(fru);
   }
 
+  print(greet("adfafd"));
+  print(quare(3));
+
+  describePet(name:"dafdsaf", species: "cat");
+  describePet(name:"dadaffdsaf", species: "catdaf");
+
+  repeat("dfa", 3);
+  repeat("haha", 2);
+
+  //сортировка по убыванию
+  List<int> numbers = [2,3,4,5,6,1];
+  numbers.sort((a, b) => b - a);
+  print(numbers);
+
+  List<String> names = ["Артем", "Мария", "Иван"];
+  List<String> upper = names.map((name) => name.toUpperCase()).toList();
+  print(upper);
+
+  List<String> longNames = names.where((name) => name.length > 4).toList();
+  print(longNames);
+
   
 }
+
+
+
