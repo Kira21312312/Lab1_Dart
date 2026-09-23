@@ -176,7 +176,7 @@ int minGrade(List<int> grades) {
 }
 
 
-String letterGrede(double avg) {
+String letterGrade(double avg) {
   if (avg >= 4.5) return "Отлично";
   if (avg >=3.5) return "Хорошо";
   if (avg >= 2.5) return "Удолетворительно";
@@ -190,7 +190,7 @@ void printStats({required String name, required List<int> grades}) {
   print("Оценки: $grades");
   print("Среднее: ${avg.toStringAsFixed(2)}");
   print("Макс: ${maxGrade(grades)}, Мин: ${minGrade(grades)}");
-  print("Итог: #{letterGrade(avg)}");
+  print("Итог: ${letterGrade(avg)}");
   print("");
 }
 
@@ -209,7 +209,7 @@ void main() {
 
   print("Общая статистика");
   int totalStudents = students.length;
-  print("Всего студентов: #totalStudents");
+  print("Всего студентов: $totalStudents");
 
   int excellentCount = 0;
   students.forEach((name, grades) {
